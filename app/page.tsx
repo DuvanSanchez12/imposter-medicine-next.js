@@ -51,8 +51,8 @@ export default function Home() {
     <main className="flex flex-col items-center justify-center min-h-screen bg-slate-950 text-emerald-400 font-mono p-4">
       <div className="max-w-md w-full space-y-8 bg-slate-900 p-8 rounded-xl border-t-4 border-emerald-500 shadow-2xl">
         <div className="text-center space-y-2">
-          <h1 className="text-3xl font-bold tracking-tighter">CENTRO DE GESTIÓN MÉDICA</h1>
-          <p className="text-xs text-emerald-700 uppercase tracking-widest">Protocolo de Intrusión v1.0</p>
+          <h1 className="text-3xl font-bold tracking-tighter">EL IMPOSTOR MÉDICO</h1>
+          <p className="text-xs text-emerald-700 uppercase tracking-widest">HAY UN INFILTRADO EN EL CUERPO MÉDICO</p>
         </div>
         
         <div className="space-y-4">
@@ -97,7 +97,7 @@ export default function Home() {
         )}
 
         <footer className="text-center pt-4">
-          <p className="text-[10px] text-emerald-900 uppercase">Sistema de Triage Encriptado</p>
+          <p className="text-[10px] text-emerald-900 uppercase">Sistema de salas médicas</p>
         </footer>
       </div>
     </main>

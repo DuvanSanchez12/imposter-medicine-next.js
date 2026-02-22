@@ -35,7 +35,7 @@ export default function Home() {
     if (name.trim()) {
       socket.emit("create-room", { name });
     } else {
-      setError("Debes ingresar un nombre de especialista.");
+      setError("Debes ingresar un nombre.");
     }
   };
 

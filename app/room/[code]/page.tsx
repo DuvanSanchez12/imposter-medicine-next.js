@@ -21,7 +21,6 @@ export default function RoomPage() {
   }
     const handleUpdateSettings = (newSetting: any) => {
     const updatedSettings = { ...settings, ...newSetting };
-    // Importante: Emitimos el objeto completo
     socket.emit("update-settings", { 
         roomCode: code, 
         settings: updatedSettings 

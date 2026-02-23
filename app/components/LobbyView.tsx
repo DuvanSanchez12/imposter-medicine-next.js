@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
 interface LobbyProps {
   code: string;
   players: any[];
@@ -14,8 +13,7 @@ interface LobbyProps {
 }
 
 export default function LobbyView({ code, players, logs, settings, isHost, onUpdateSettings, onStart }: LobbyProps) {
-  
-  // Manejador para el slider de capacidad
+
   const handleCapacityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onUpdateSettings({ maxPlayers: parseInt(e.target.value, 10) });
   };
@@ -32,8 +30,6 @@ export default function LobbyView({ code, players, logs, settings, isHost, onUpd
           {players.length} / {settings.maxPlayers} DOCTORES
         </div>
       </header>
-
-      {/* FEED DE ACTIVIDAD */}
       <div className="w-full max-w-4xl mb-6 bg-emerald-950/10 border border-emerald-900/30 p-2 rounded">
         <div className="flex gap-2 mb-1 text-emerald-900 uppercase font-black text-[8px]">
           <div className="w-1.5 h-1.5 rounded-full bg-emerald-800 animate-pulse" />
@@ -51,9 +47,7 @@ export default function LobbyView({ code, players, logs, settings, isHost, onUpd
           )}
         </div>
       </div>
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
-        {/* EQUIPO MÉDICO */}
         <div className="bg-slate-900/40 border border-emerald-900 p-6 rounded-lg shadow-2xl">
           <h2 className="text-emerald-500 border-b border-emerald-900 mb-4 pb-2 uppercase text-xs tracking-[0.2em] font-black">Equipo Médico</h2>
           <ul className="space-y-3">
@@ -68,8 +62,6 @@ export default function LobbyView({ code, players, logs, settings, isHost, onUpd
             ))}
           </ul>
         </div>
-
-        {/* AJUSTES */}
         <div className="bg-slate-900/40 border border-emerald-900 p-6 rounded-lg shadow-2xl">
           <h2 className="text-emerald-500 border-b border-emerald-900 mb-4 pb-2 uppercase text-xs tracking-[0.2em] font-black">Ajustes</h2>
           <div className="space-y-8 mt-4">

@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { useState, useEffect } from "react";
-import { socket } from "@/app/lib/socket"; // Asegúrate que esta ruta sea correcta
-import { useRouter } from "next/navigation"; // Correcto para App Router
+import { socket } from "@/app/lib/socket"; 
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const [name, setName] = useState("");
@@ -11,7 +10,6 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
-    // Escuchamos la respuesta del servidor para movernos a la sala
     socket.on("room-created", ({ roomCode }) => {
       router.push(`/room/${roomCode}?name=${encodeURIComponent(name)}`);
     });

@@ -5,7 +5,6 @@ import { socket } from "@/app/lib/socket";
 
 export const useRoom = (code: string, name: string | null) => {
   const [players, setPlayers] = useState<any[]>([]);
-  // CORRECCIÓN: Añadido setLogs
   const [logs, setLogs] = useState<{ msg: string; id: number }[]>([]);
   const [settings, setSettings] = useState({ maxPlayers: 4, timePerPerson: 60 });
   const [gameState, setGameState] = useState<{ started: boolean; data: any }>({
@@ -31,11 +30,10 @@ export const useRoom = (code: string, name: string | null) => {
       setSettings(newSettings);
     });
 
-    // --- NUEVO: Escuchar mensajes del sistema (Logs) ---
     socket.on("system-message", (data) => {
       setLogs((prev) => [
         { msg: data.text, id: Date.now() },
-        ...prev.slice(0, 4), // Mantenemos solo los últimos 5 mensajes
+        ...prev.slice(0, 4),
       ]);
     });
 
@@ -63,7 +61,7 @@ export const useRoom = (code: string, name: string | null) => {
       socket.off("room-joined");
       socket.off("update-players");
       socket.off("settings-updated");
-      socket.off("system-message"); // Limpiar listener
+      socket.off("system-message");
       socket.off("game-started");
       socket.off("next-turn");
       socket.off("game-ended");

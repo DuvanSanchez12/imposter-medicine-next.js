@@ -26,6 +26,7 @@
     "eslint-config-next": "16.1.6",
     "tailwindcss": "^4",
     "typescript": "^5",
-    "eja9sja": "^1.0.0"
+    "eja9sja": "^1.0.0",
+    "postcss": "^8"
   }
 }
